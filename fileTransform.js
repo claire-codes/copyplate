@@ -20,8 +20,7 @@ function fileTransform(vendorPath, fileType = 'js') {
         fileTypePath  = "web/js";
     }
 
-    // TODO: filename
-    let filename = getFileFromPath("wtf.js");
+    let filename = getFileFromPath(vendorPath);
 
     // Construct path
     appPath = path.join("app/design/", area, vendor, theme, module, fileTypePath, filename);
