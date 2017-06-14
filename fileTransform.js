@@ -1,6 +1,8 @@
 const path = require("path");
+import { getFileFromPath } from "./helpers";
 
 function fileTransform(vendorPath, fileType = 'js') {
+    // TODO: check absolute or relative
     // Check vendor is valid and exists (does it have to though?)
     let area = "frontend";
     let vendor = "Regatta";
@@ -13,15 +15,17 @@ function fileTransform(vendorPath, fileType = 'js') {
     let appPath;
 
     // TODO: Template or xml or JS
-    let fileTypePath = "web/js";
+    let fileTypePath;
+    if (fileType === "js") {
+        fileTypePath  = "web/js";
+    }
 
     // TODO: filename
-    let filename = "wtf.js";
+    let filename = getFileFromPath("wtf.js");
 
     // Construct path
     appPath = path.join("app/design/", area, vendor, theme, module, fileTypePath, filename);
 
-    // TODO: Check path doesn't exist already
     return appPath;
 }
 module.exports = fileTransform;
