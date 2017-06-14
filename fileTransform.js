@@ -1,5 +1,5 @@
 const path = require("path");
-import { getFileFromPath } from "./helpers";
+import { getFileFromPath, getModuleName } from "./helpers";
 
 function fileTransform(vendorPath, fileType = 'js') {
     // TODO: check absolute or relative
@@ -8,10 +8,9 @@ function fileTransform(vendorPath, fileType = 'js') {
     let vendor = "Regatta";
     let theme = "default-desktop";
     // 'vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'
-    // app / design / frontend / Regatta / default - desktop / Magento_Wishlist / web / js / wtf.js
+    // app/design/frontend/Regatta/default-desktop/Magento_Wishlist/web/js/wtf.js
 
-    // TODO: Find module and construct app version
-    let module = "Magento_Wishlist";
+    let module = getModuleName(vendorPath);
     let appPath;
 
     // TODO: Template or xml or JS
@@ -27,4 +26,5 @@ function fileTransform(vendorPath, fileType = 'js') {
 
     return appPath;
 }
+
 module.exports = fileTransform;
