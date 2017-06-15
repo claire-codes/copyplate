@@ -1,6 +1,9 @@
 const fileTransform = require('./fileTransform');
 
-test('simple happy path', () => {
+test('Global JS in app/design', () => {
   expect(fileTransform('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'))
-    .toBe('app/design/frontend/Regatta/default-desktop/Magento_Wishlist/web/js/wtf.js');
+    .toBe('app/design/frontend/Regatta/default/Magento_Wishlist/web/js/wtf.js');
+
+expect(fileTransform('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml', 'phtml'))
+    .toBe('app/design/frontend/Regatta/default/Magento_CustomerCustomAttributes/templates/customer/address/edit.phtml');
 });
