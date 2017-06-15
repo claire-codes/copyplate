@@ -8,6 +8,8 @@ let getFileFromPath = function(path) {
         findMe = "templates/";
     } else if (fileType === "js") {
         findMe = "web/js/";
+    } else if (fileType === "xml") {
+        findMe = "layout/";
     } else {
         findMe = "/";
     }

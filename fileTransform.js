@@ -22,6 +22,8 @@ function fileTransform(vendorPath) {
         fileTypePath  = "web/js";
     } else if (fileType === "phtml") {
         fileTypePath = "templates";
+    } else if (fileType === "xml") {
+        fileTypePath = "layout";
     }
 
     let filename = getFileFromPath(vendorPath);
