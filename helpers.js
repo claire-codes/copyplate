@@ -2,8 +2,16 @@ const path = require("path");
 
 let getFileFromPath = function(path) {
     // Get file type and then you know which bit to ignore up to
-    let splitPath = path.split("/");
-    return splitPath[splitPath.length - 1];
+    let findMe;
+    let fileType = getFileType(path);
+    if (fileType === "phtml") {
+        findMe = "templates/";
+    } else if (fileType === "js") {
+        findMe = "web/js/";
+    } else {
+        findMe = "/";
+    }
+    return path.substring(path.indexOf(findMe) + findMe.length);
 }
 
 let getModuleName = function(path) {

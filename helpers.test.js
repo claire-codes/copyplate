@@ -9,8 +9,8 @@ test('simple happy path', () => {
     expect(getFileFromPath('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml'))
         .toBe('customer/address/edit.phtml');
 
-    expect(getFileFromPath('/abc/def.html'))
-        .toBe('def.html');
+    expect(getFileFromPath('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml'))
+        .toBe('customer/address/edit.phtml');
 
     expect(getModuleName('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'))
         .toBe('Magento_Wishlist');
