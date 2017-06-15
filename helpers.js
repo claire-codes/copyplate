@@ -29,7 +29,7 @@ let transformModuleName = function(vendorModule) {
     // module-customer-custom-attributes => Magento_CustomerCustomAttributes
     let name = vendorModule.split("-");
     name.shift();
-    let names = name.map(function(element) { 
+    let names = name.map(function(element) {
         return capitalizeFirstLetter(element);
     });
     return "Magento_" + names.join('');
