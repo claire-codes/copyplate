@@ -15,8 +15,13 @@ let getModuleName = function(path) {
 
 let transformModuleName = function(vendorModule) {
     // module-wishlist => Magento_Wishlist
-    let name = vendorModule.split("-")[1];
-    return "Magento_" + capitalizeFirstLetter(name);
+    // module-customer-custom-attributes => Magento_CustomerCustomAttributes
+    let name = vendorModule.split("-");
+    name.shift();
+    let names = name.map(function(element) { 
+        return capitalizeFirstLetter(element);
+    });
+    return "Magento_" + names.join('');
 }
 
 let capitalizeFirstLetter = function(string) {

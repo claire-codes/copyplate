@@ -14,4 +14,7 @@ test('simple happy path', () => {
 
     expect(transformModuleName('module-wishlist'))
         .toBe('Magento_Wishlist');
+
+    expect(transformModuleName('module-customer-custom-attributes'))
+        .toBe('Magento_CustomerCustomAttributes');
 });
