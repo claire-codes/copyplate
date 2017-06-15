@@ -1,9 +1,7 @@
-const path = require("path");
-
 let getFileFromPath = function(path) {
     // Get file type and then you know which bit to ignore up to
     let findMe;
-    let fileType = getFileType(path);
+    let fileType = getFileExtension(path);
     if (fileType === "phtml") {
         findMe = "templates/";
     } else if (fileType === "js") {
@@ -27,21 +25,21 @@ let getModuleName = function(path) {
 let transformModuleName = function(vendorModule) {
     // module-wishlist => Magento_Wishlist
     // module-customer-custom-attributes => Magento_CustomerCustomAttributes
-    let name = vendorModule.split("-");
-    name.shift();
-    let names = name.map(function(element) {
+    let splitModuleName = vendorModule.split("-");
+    splitModuleName.shift();
+    let capitalizedNames = splitModuleName.map(function(element) {
         return capitalizeFirstLetter(element);
     });
-    return "Magento_" + names.join('');
+    return "Magento_" + capitalizedNames.join('');
 }
 
 let capitalizeFirstLetter = function(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-let getFileType = function(path) {
+let getFileExtension = function(path) {
     let splitPath = path.split(".");
     return splitPath[splitPath.length - 1];
 }
 
-export {getFileFromPath, getModuleName, transformModuleName, getFileType};
+export {getFileFromPath, getModuleName, transformModuleName, getFileExtension};

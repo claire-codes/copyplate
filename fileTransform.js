@@ -1,5 +1,5 @@
 const path = require("path");
-import {getFileFromPath, getModuleName, getFileType} from "./helpers";
+import {getFileFromPath, getModuleName, getFileExtension} from "./helpers";
 
 // TODO: Toggle between app/design and app/code
 
@@ -12,12 +12,14 @@ function fileTransform(vendorPath) {
     let vendor = "Regatta";
     let theme = "default";
     let module = getModuleName(vendorPath);
-    let fileType = getFileType(vendorPath);
+    // TODO: These are pretty similarly named and confusing
+    let fileType = getFileExtension(vendorPath);
     let filename = getFileFromPath(vendorPath);
     let fileTypePath = "/";
 
     // TODO: Knockout html
     // TODO: Module specific JS
+    // TODO: Move this into a function to
     if (fileType === "js") {
         fileTypePath = "web/js";
     } else if (fileType === "phtml") {
