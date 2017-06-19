@@ -1,10 +1,18 @@
 const path = require("path");
 const fs = require("fs");
-
+const fileTransform = require('./fileTransform');
 
 // TODO: Get arg
+var vendorPath = process.argv[0];
+var appPath;
 
 // TODO: Decide whether to make file (are args OK, is fileTransform result OK?)
+if (vendorPath) {
+    appPath = fileTransform(vendorPath);
+} else {
+    console.log("You haven't provided me with an argument");
+    process.exit();
+}
 // TODO: Does current one exist - copy content
 var filePath = 'foo.txt';
 
