@@ -11,7 +11,7 @@ function fileTransform(vendorPath) {
     let area = "frontend";
     let vendor = "Regatta";
     let theme = "default";
-    let module = getModuleName(vendorPath);
+    let moduleName = getModuleName(vendorPath);
     // TODO: These are pretty similarly named and confusing
     let fileType = getFileExtension(vendorPath);
     let filename = getFileFromPath(vendorPath);
@@ -29,7 +29,7 @@ function fileTransform(vendorPath) {
     }
 
     // Construct path
-    return path.join("app/design/", area, vendor, theme, module, fileTypePath, filename);
+    return path.join("app/design/", area, vendor, theme, moduleName, fileTypePath, filename);
 }
 
 module.exports = fileTransform;
