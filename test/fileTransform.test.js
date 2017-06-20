@@ -1,4 +1,4 @@
-const fileTransform = require('./fileTransform');
+const fileTransform = require('../src/fileTransform');
 
 test('Global JS in app/design', () => {
   expect(fileTransform('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'))

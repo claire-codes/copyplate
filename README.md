@@ -1,1 +1,3 @@
-Compile with `babel copyplate.js -d dist/`
+Compile with `babel src/ -d dist/`.
+
+Run tests with `npm t`.

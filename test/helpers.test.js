@@ -1,4 +1,4 @@
-import { getFileFromPath, getModuleName, transformModuleName, getFileExtension } from "./helpers";
+import { getFileFromPath, getModuleName, transformModuleName, getFileExtension } from "../src/helpers";
 
 // TODO: Few more tests please
 
