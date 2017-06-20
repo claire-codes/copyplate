@@ -3,7 +3,8 @@ const fs = require("fs");
 const fileTransform = require('./fileTransform');
 
 // TODO: Get arg
-var vendorPath = process.argv[0];
+var args = process.argv.slice(2);
+var vendorPath = args[0];
 var appPath;
 
 // TODO: Decide whether to make file (are args OK, is fileTransform result OK?)
