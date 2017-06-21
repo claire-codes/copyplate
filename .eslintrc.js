@@ -7,6 +7,11 @@ module.exports = {
     "parserOptions": {
         "sourceType": "module"
     },
+    "globals": {
+        "require": true,
+        "process": true,
+        "module": true
+    },
     "rules": {
         "accessor-pairs": "error",
         "array-bracket-newline": "error",
@@ -103,6 +108,7 @@ module.exports = {
         "no-caller": "error",
         "no-catch-shadow": "error",
         "no-confusing-arrow": "error",
+        "no-console": "off",
         "no-continue": "error",
         "no-div-regex": "error",
         "no-duplicate-imports": "error",
