@@ -19,6 +19,11 @@ if (vendorPath) {
     process.exit();
 }
 
+if (!appPath) {
+    console.log("Nope");
+    process.exit();
+}
+
 // TODO: Copy content rather than create blank file
 var filePath = 'foo.txt';
 

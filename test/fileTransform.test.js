@@ -7,3 +7,7 @@ test('Global JS in app/design', () => {
 
     expect(fileTransform('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('app/design/frontend/Regatta/default/Magento_Checkout/layout/checkout_cart_index.xml');
 });
+
+test('Non-Magento file', () => {
+    expect(fileTransform('foo.txt')).toBe(false);
+});

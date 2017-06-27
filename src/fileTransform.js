@@ -8,6 +8,9 @@ import {getFileFromPath, getModuleName, getFileExtension} from "./helpers";
 // app/design/frontend/Regatta/default/Magento_Wishlist/web/js/wtf.js
 function fileTransform(vendorPath) {
     // TODO: check absolute or relative
+    if (vendorPath.indexOf("vendor/") !== 0) {
+        return false;
+    }
     let area = "frontend";
     let vendor = "Regatta";
     let theme = "default";
