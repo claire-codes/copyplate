@@ -29,6 +29,8 @@ function fileTransform(vendorPath) {
         fileTypePath = "templates";
     } else if (fileType === "xml") {
         fileTypePath = "layout";
+    } else if (fileType === "html") {
+        fileTypePath = "web/template"
     }
 
     // Construct path
