@@ -10,7 +10,9 @@ module.exports = {
     "globals": {
         "require": true,
         "process": true,
-        "module": true
+        "module": true,
+        "expect": true,
+        "test": true
     },
     "rules": {
         "accessor-pairs": "error",
@@ -68,7 +70,7 @@ module.exports = {
         "id-blacklist": "error",
         "id-length": "error",
         "id-match": "error",
-        "indent": "error",
+        "indent": ["error", 4],
         "indent-legacy": "error",
         "init-declarations": "off",
         "jsx-quotes": "error",
