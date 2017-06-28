@@ -2,19 +2,8 @@ const path = require("path");
 
 let getFileSpecificPath = function(filepath) {
     // Get file type and then you know which bit to ignore up to
-    let findMe;
     let fileType = path.extname(filepath);
-    if (fileType === ".phtml") {
-        findMe = "templates/";
-    } else if (fileType === ".js") {
-        findMe = "web/js/";
-    } else if (fileType === ".xml") {
-        findMe = "layout/";
-    } else if (fileType === ".html") {
-        findMe = "web/template/";
-    } else {
-        findMe = "/";
-    }
+    let findMe = getFileTypePath(fileType) + "/";
     return filepath.substring(filepath.indexOf(findMe) + findMe.length);
 }
 
@@ -46,4 +35,17 @@ let getFileExtension = function(filepath) {
     return splitPath[splitPath.length - 1];
 }
 
-export {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension};
+let getFileTypePath = function(fileType) {
+    if (fileType === ".js") {
+        return "web/js";
+    } else if (fileType === ".phtml") {
+        return "templates";
+    } else if (fileType === ".xml") {
+        return "layout";
+    } else if (fileType === ".html") {
+        return "web/template"
+    }
+    return "";
+}
+
+export {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension, getFileTypePath};

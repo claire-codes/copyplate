@@ -1,4 +1,4 @@
-import {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension} from "../src/helpers";
+import {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension, getFileTypePath} from "../src/helpers";
 
 // TODO: Few more tests please
 
@@ -32,3 +32,11 @@ test('getFileExtension', () => {
     expect(getFileExtension('abc/hello_hello.xml')).toBe('xml');
     expect(getFileExtension('abc.xyz')).toBe('xyz');
 });
+
+test('getFileTypePath', () => {
+    expect(getFileTypePath('.js')).toBe("web/js");
+    expect(getFileTypePath('.phtml')).toBe("templates");
+    expect(getFileTypePath('.xml')).toBe("layout");
+    expect(getFileTypePath('.html')).toBe("web/template");
+    expect(getFileTypePath('.foo')).toBe("");
+})

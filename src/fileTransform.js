@@ -1,5 +1,5 @@
 const path = require("path");
-import {getFileSpecificPath, getModuleName} from "./helpers";
+import {getFileSpecificPath, getModuleName, getFileTypePath} from "./helpers";
 
 // TODO: Toggle between app/design and app/code
 
@@ -15,23 +15,13 @@ function fileTransform(vendorPath) {
     let vendor = "Regatta";
     let theme = "default";
     let moduleName = getModuleName(vendorPath);
-    // TODO: These are pretty similarly named and confusing
     let fileType = path.extname(vendorPath);
     let fileSpecificPath = getFileSpecificPath(vendorPath);
     let fileTypePath = "/";
 
-    // TODO: Knockout html
     // TODO: Module specific JS
     // TODO: Move this into a function to
-    if (fileType === ".js") {
-        fileTypePath = "web/js";
-    } else if (fileType === ".phtml") {
-        fileTypePath = "templates";
-    } else if (fileType === ".xml") {
-        fileTypePath = "layout";
-    } else if (fileType === ".html") {
-        fileTypePath = "web/template"
-    }
+    fileTypePath = getFileTypePath(fileType);
 
     // Construct path
     return path.join("app/design/", area, vendor, theme, moduleName, fileTypePath, fileSpecificPath);
