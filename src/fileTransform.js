@@ -12,7 +12,9 @@ function fileTransform(vendorPath) {
         return false;
     }
     let area = "frontend";
+    // TODO: make dynamic
     let vendor = "Regatta";
+    // TODO: make dynamic
     let theme = "default";
     let moduleName = getModuleName(vendorPath);
     let fileType = path.extname(vendorPath);
@@ -20,7 +22,6 @@ function fileTransform(vendorPath) {
     let fileTypePath = "/";
 
     // TODO: Module specific JS
-    // TODO: Move this into a function to
     fileTypePath = getFileTypePath(fileType);
 
     // Construct path
