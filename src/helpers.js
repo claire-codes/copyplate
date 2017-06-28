@@ -1,23 +1,25 @@
-let getFileSpecificPath = function(path) {
+const path = require("path");
+
+let getFileSpecificPath = function(filepath) {
     // Get file type and then you know which bit to ignore up to
     let findMe;
-    let fileType = getFileExtension(path);
-    if (fileType === "phtml") {
+    let fileType = path.extname(filepath);
+    if (fileType === ".phtml") {
         findMe = "templates/";
-    } else if (fileType === "js") {
+    } else if (fileType === ".js") {
         findMe = "web/js/";
-    } else if (fileType === "xml") {
+    } else if (fileType === ".xml") {
         findMe = "layout/";
-    } else if (fileType === "html") {
+    } else if (fileType === ".html") {
         findMe = "web/template/";
     } else {
         findMe = "/";
     }
-    return path.substring(path.indexOf(findMe) + findMe.length);
+    return filepath.substring(filepath.indexOf(findMe) + findMe.length);
 }
 
-let getModuleName = function(path) {
-    let splitPath = path.split("/");
+let getModuleName = function(filepath) {
+    let splitPath = filepath.split("/");
     let module = splitPath.find(function(element) {
         return element.indexOf("module-") > -1;
     })
@@ -39,8 +41,8 @@ let capitalizeFirstLetter = function(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-let getFileExtension = function(path) {
-    let splitPath = path.split(".");
+let getFileExtension = function(filepath) {
+    let splitPath = filepath.split(".");
     return splitPath[splitPath.length - 1];
 }
 
