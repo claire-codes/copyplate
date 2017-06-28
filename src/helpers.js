@@ -1,4 +1,4 @@
-let getFileFromPath = function(path) {
+let getFileSpecificPath = function(path) {
     // Get file type and then you know which bit to ignore up to
     let findMe;
     let fileType = getFileExtension(path);
@@ -44,4 +44,4 @@ let getFileExtension = function(path) {
     return splitPath[splitPath.length - 1];
 }
 
-export {getFileFromPath, getModuleName, transformModuleName, getFileExtension};
+export {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension};

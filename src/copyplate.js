@@ -5,8 +5,8 @@ const path = require("path");
 const fileTransform = require('./fileTransform');
 const mkdirp = require("mkdirp");
 
-var args = process.argv.slice(2);
-var vendorPath = args[0];
+const args = process.argv.slice(2);
+const vendorPath = args[0];
 var appPath;
 
 if (vendorPath) {

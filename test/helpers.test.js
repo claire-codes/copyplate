@@ -1,15 +1,18 @@
-import {getFileFromPath, getModuleName, transformModuleName, getFileExtension} from "../src/helpers";
+import {getFileSpecificPath, getModuleName, transformModuleName, getFileExtension} from "../src/helpers";
 
 // TODO: Few more tests please
 
 test('simple happy path', () => {
-    expect(getFileFromPath('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('wtf.js');
+    expect(getFileSpecificPath('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('wtf.js');
+    expect(getFileSpecificPath('vendor/magento/module-wishlist/view/frontend/web/js/cart/wtf.js')).toBe('cart/wtf.js');
 
-    expect(getFileFromPath('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('customer/address/edit.phtml');
+    expect(getFileSpecificPath('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('customer/address/edit.phtml');
 
-    expect(getFileFromPath('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('checkout_cart_index.xml');
+    expect(getFileSpecificPath('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('checkout_cart_index.xml');
+    expect(getFileSpecificPath('vendor/magento/module-checkout/view/frontend/layout/sub/checkout_cart_index.xml')).toBe('sub/checkout_cart_index.xml');
 
-    expect(getFileFromPath('vendor/magento/module-customer-custom-attributes/view/frontend/web/template/knock-me-out.html')).toBe('knock-me-out.html');
+    expect(getFileSpecificPath('vendor/magento/module-customer-custom-attributes/view/frontend/web/template/knock-me-out.html')).toBe('knock-me-out.html');
+    expect(getFileSpecificPath('vendor/magento/module-customer-custom-attributes/view/frontend/web/template/here/knock-me-out.html')).toBe('here/knock-me-out.html');
 
     expect(getModuleName('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('Magento_Wishlist');
 
