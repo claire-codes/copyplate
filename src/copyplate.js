@@ -26,14 +26,13 @@ if (!appPath) {
     process.exit();
 }
 
-// TODO: Copy content rather than create blank file
-
 if (fs.existsSync(appPath)) {
     console.log("It already exists");
     process.exit();
 } else {
     console.log("It doesn't exist yet, I'll make it");
     mkdirp(path.dirname(appPath), function() {
-        fs.writeFileSync(appPath);
+        const contents = fs.readFileSync(vendorPath, 'utf8');
+        fs.writeFileSync(appPath, contents, 'utf8');
     });
 }
