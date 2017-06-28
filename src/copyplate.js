@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
 const fs = require("fs");
+const path = require("path");
 const fileTransform = require('./fileTransform');
+const mkdirp = require("mkdirp");
 
 var args = process.argv.slice(2);
 var vendorPath = args[0];
@@ -25,12 +27,13 @@ if (!appPath) {
 }
 
 // TODO: Copy content rather than create blank file
-var filePath = 'foo.txt';
 
-if (fs.existsSync(filePath)) {
+if (fs.existsSync(appPath)) {
     console.log("It already exists");
     process.exit();
 } else {
     console.log("It doesn't exist yet, I'll make it");
-    fs.closeSync(fs.openSync(filePath, 'w'));
+    mkdirp(path.dirname(appPath), function() {
+        fs.writeFileSync(appPath);
+    });
 }
