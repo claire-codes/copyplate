@@ -13,10 +13,14 @@ Vendor is currently `Regatta` and theme is `default` - they will need changing i
 ### Testing locally
 
 ```bash
+npm run babel
 mkdir -p vendor/magento/module-wishlist/view/frontend/web/js
 echo FU >> vendor/magento/module-wishlist/view/frontend/web/js/wtf.js
+# If installed globally with npm i -g:
 copyplate vendor/magento/module-wishlist/view/frontend/web/js/wtf.js
-less app/design/frontend/Regatta/default/Magento_Wishlist/web/js/wtf.js
+# Otherwise
+node dist/copyplate.js vendor/magento/module-wishlist/view/frontend/web/js/wtf.js MyVendor
+less app/design/frontend/MyVendor/default/Magento_Wishlist/web/js/wtf.js
 ```
 
 ## Developing

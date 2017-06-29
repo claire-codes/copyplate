@@ -7,11 +7,12 @@ const mkdirp = require("mkdirp");
 
 const args = process.argv.slice(2);
 const vendorPath = args[0];
+const vendorName = args[1];
 var appPath;
 
 if (vendorPath) {
     if (fs.existsSync(vendorPath))  {
-        appPath = fileTransform(vendorPath);
+        appPath = fileTransform(vendorPath, vendorName);
     } else {
         console.log("File does not exist");
         process.exit();
