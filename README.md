@@ -8,7 +8,12 @@ When given a valid path to a module file in the `vendor` directory, it will crea
 
 Clone the repo and from the room run `npm i -g` - now you can run this from anywhere on your machine!
 
-Vendor is currently `Vendor` and theme is `default` - they will need changing in `src/fileTransform.js` and then `npm run babel` before installing globally.
+Vendor is currently `Vendor` and theme is `default`, so override these as command line arguments - vendor name first and theme name second, e.g.
+
+```bash
+copyplate vendor/magento/module-wishlist/view/frontend/web/js/wtf.js MyVendor myTheme
+# creates app/design/frontend/MyVendor/myTheme/Magento_Wishlist/web/js/wtf.js
+```
 
 ### Testing locally
 
@@ -19,8 +24,8 @@ echo FU >> vendor/magento/module-wishlist/view/frontend/web/js/wtf.js
 # If installed globally with npm i -g:
 copyplate vendor/magento/module-wishlist/view/frontend/web/js/wtf.js
 # Otherwise
-node dist/copyplate.js vendor/magento/module-wishlist/view/frontend/web/js/wtf.js MyVendor
-less app/design/frontend/MyVendor/default/Magento_Wishlist/web/js/wtf.js
+node dist/copyplate.js vendor/magento/module-wishlist/view/frontend/web/js/wtf.js MyVendor myTheme
+less app/design/frontend/MyVendor/myTheme/Magento_Wishlist/web/js/wtf.js
 ```
 
 ## Developing
