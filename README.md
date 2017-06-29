@@ -8,7 +8,7 @@ When given a valid path to a module file in the `vendor` directory, it will crea
 
 Clone the repo and from the room run `npm i -g` - now you can run this from anywhere on your machine!
 
-Vendor is currently `Regatta` and theme is `default` - they will need changing in `src/fileTransform.js` and then `npm run babel` before installing globally.
+Vendor is currently `Vendor` and theme is `default` - they will need changing in `src/fileTransform.js` and then `npm run babel` before installing globally.
 
 ### Testing locally
 

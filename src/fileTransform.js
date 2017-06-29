@@ -5,8 +5,8 @@ import {getFileSpecificPath, getModuleName, getFileTypePath} from "./helpers";
 
 // Example:
 // 'vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'
-// app/design/frontend/Regatta/default/Magento_Wishlist/web/js/wtf.js
-function fileTransform(vendorPath, vendor = "Regatta", theme = "default") {
+// app/design/frontend/Vendor/default/Magento_Wishlist/web/js/wtf.js
+function fileTransform(vendorPath, vendor = "Vendor", theme = "default") {
     // TODO: check absolute or relative
     if (vendorPath.indexOf("vendor/") !== 0) {
         return false;
