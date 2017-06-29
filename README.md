@@ -29,7 +29,8 @@ Run as shell script with the hashbang at the top `#!/usr/bin/env node`, make sur
 
 ## Improvements
 
-- [ ] Make theme and vendor name customisable
+- [x] ~~Make vendor name customisable~~
+- [ ] Make theme name customisable (write tests)
 - [ ] More tests for bad input
 - [ ] Be able to copy to `app/code`: only does `app/design` for now
 - [ ] Copy module-specific JS: only does theme JS for now

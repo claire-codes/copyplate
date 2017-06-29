@@ -6,16 +6,13 @@ import {getFileSpecificPath, getModuleName, getFileTypePath} from "./helpers";
 // Example:
 // 'vendor/magento/module-wishlist/view/frontend/web/js/wtf.js'
 // app/design/frontend/Regatta/default/Magento_Wishlist/web/js/wtf.js
-function fileTransform(vendorPath) {
+function fileTransform(vendorPath, vendor = "Regatta", theme = "default") {
     // TODO: check absolute or relative
     if (vendorPath.indexOf("vendor/") !== 0) {
         return false;
     }
+    // TODO: Make theme dynamic
     let area = "frontend";
-    // TODO: make dynamic
-    let vendor = "Regatta";
-    // TODO: make dynamic
-    let theme = "default";
     let moduleName = getModuleName(vendorPath);
     let fileType = path.extname(vendorPath);
     let fileSpecificPath = getFileSpecificPath(vendorPath);
