@@ -5,6 +5,7 @@ import {getFileSpecificPath, getModuleName, transformModuleName, getFileExtensio
 test('getFileSpecificPath', () => {
     expect(getFileSpecificPath('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('wtf.js');
     expect(getFileSpecificPath('vendor/magento/module-wishlist/view/frontend/web/js/cart/wtf.js')).toBe('cart/wtf.js');
+    expect(getFileSpecificPath('vendor/magento/module-tax/view/frontend/web/js/view/checkout/summary/tax.js')).toBe('view/checkout/summary/tax.js');
     expect(getFileSpecificPath('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('customer/address/edit.phtml');
     expect(getFileSpecificPath('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('checkout_cart_index.xml');
     expect(getFileSpecificPath('vendor/magento/module-checkout/view/frontend/layout/sub/checkout_cart_index.xml')).toBe('sub/checkout_cart_index.xml');
@@ -14,11 +15,16 @@ test('getFileSpecificPath', () => {
 
 test('getModuleName', () => {
     expect(getModuleName('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('Magento_Wishlist');
+    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/web/js/wtf.js')).toBe('Magento_CustomerCustomAttributes');
+    expect(getModuleName('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('Magento_Checkout');
+    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('Magento_CustomerCustomAttributes');
 });
 
 test('transformModuleName', () => {
     expect(transformModuleName('module-wishlist')).toBe('Magento_Wishlist');
+    expect(transformModuleName('module-catalog-rule')).toBe('Magento_CatalogRule');
     expect(transformModuleName('module-customer-custom-attributes')).toBe('Magento_CustomerCustomAttributes');
+    expect(transformModuleName('module-bundle-import-export')).toBe('Magento_BundleImportExport');
 });
 
 test('getFileExtension', () => {
