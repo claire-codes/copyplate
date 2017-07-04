@@ -1,5 +1,5 @@
 const path = require("path");
-import {getFileSpecificPath, getModuleName, getFileTypePath} from "./helpers";
+import {getFileSpecificPath, getModuleName, getFileTypePath, transformModuleName} from "./helpers";
 
 // TODO: Toggle between app/design and app/code
 
@@ -13,7 +13,7 @@ function fileTransform(vendorPath, vendor = "Vendor", theme = "default") {
     }
     // TODO: Make theme dynamic
     let area = "frontend";
-    let moduleName = getModuleName(vendorPath);
+    let moduleName = transformModuleName(getModuleName(vendorPath));
     let fileType = path.extname(vendorPath);
     let fileSpecificPath = getFileSpecificPath(vendorPath);
     let fileTypePath = "/";

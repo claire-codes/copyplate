@@ -14,10 +14,10 @@ test('getFileSpecificPath', () => {
 });
 
 test('getModuleName', () => {
-    expect(getModuleName('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('Magento_Wishlist');
-    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/web/js/wtf.js')).toBe('Magento_CustomerCustomAttributes');
-    expect(getModuleName('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('Magento_Checkout');
-    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('Magento_CustomerCustomAttributes');
+    expect(getModuleName('vendor/magento/module-wishlist/view/frontend/web/js/wtf.js')).toBe('module-wishlist');
+    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/web/js/wtf.js')).toBe('module-customer-custom-attributes');
+    expect(getModuleName('vendor/magento/module-checkout/view/frontend/layout/checkout_cart_index.xml')).toBe('module-checkout');
+    expect(getModuleName('vendor/magento/module-customer-custom-attributes/view/frontend/templates/customer/address/edit.phtml')).toBe('module-customer-custom-attributes');
 });
 
 test('transformModuleName', () => {

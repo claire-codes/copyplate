@@ -12,7 +12,7 @@ let getModuleName = function(filepath) {
     let module = splitPath.find(function(element) {
         return element.indexOf("module-") > -1;
     })
-    return transformModuleName(module);
+    return module;
 }
 
 let transformModuleName = function(vendorModule) {
