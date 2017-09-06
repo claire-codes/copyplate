@@ -39,8 +39,9 @@ Run as shell script with the hashbang at the top `#!/usr/bin/env node`, make sur
 ## Improvements
 
 - [x] ~~Make vendor name customisable~~
-- [ ] Make theme name customisable (write tests)
+- [x] ~~Make theme name customisable (write tests)~~
 - [ ] More tests for bad input
-- [ ] Be able to copy to `app/code`: only does `app/design` for now
-- [ ] Copy module-specific JS: only does theme JS for now
+- [ ] Be able to copy to `app/code`: only does `app/design` for now: set `--flag` for this
 - [ ] Handle absolute paths: only handles `vendor/...` for now
+- [ ] Change theme and vendor to `--flags`
+- [ ] Write better log messages - print out path of new file on success
