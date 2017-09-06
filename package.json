@@ -6,7 +6,9 @@
     "directories": {
         "test": "test"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "prettier": "^1.6.1"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/claireparker/copyplate.git"
@@ -20,7 +22,8 @@
     "scripts": {
         "test": "jest",
         "lint": "eslint src/",
-        "babel": "babel src/ -d dist/"
+        "babel": "babel src/ -d dist/",
+        "prettier": "prettier --write --tab-width 4 --single-quote true"
     },
     "dependencies": {
         "babel-cli": "^6.24.1",
